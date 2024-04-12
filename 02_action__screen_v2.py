@@ -18,12 +18,6 @@ def action_screen():
 
     # while loop to continue asking for choices
     while choice != "Exit":
-        # display action screen with choices
-        choice = easygui.buttonbox("What would you like to do?",
-                                   "BURGER MENU COMBO EDITOR",
-                                   ["Add combo", "Delete combo",
-                                    "Find combo", "Output all", "Exit"])
-
         # # check the choice and call the appropriate function
         # if choice == "Add combo":
         #     add_combo()
@@ -34,6 +28,16 @@ def action_screen():
         # elif choice == "Output all":
         #     print_all()
 
+        # display action screen with choices again
+        choice = easygui.buttonbox("What would you like to do?",
+                                   "BURGER MENU COMBO EDITOR",
+                                   ["Add combo", "Delete combo",
+                                    "Find combo", "Output all", "Exit"])
+
     # if exit chosen then display ending
     easygui.msgbox("Thanks for using Burger Menu Combo Editor",
                    "Goodbye!")
+
+
+# main program
+action_screen()
