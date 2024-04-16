@@ -9,7 +9,7 @@ Adds calls for choice functions (commented out for now)
 import easygui
 
 
-def action_screen():
+def action_screen(combos):
     # display action screen with choices
     choice = easygui.buttonbox("What would you like to do?",
                                "BURGER MENU COMBO EDITOR",
@@ -20,13 +20,13 @@ def action_screen():
     while choice != "Exit":
         # # check the choice and call the appropriate function
         # if choice == "Add combo":
-        #     add_combo()
+        #     add_combo(combos)
         # elif choice == "Delete combo":
-        #     del_combo()
+        #     del_combo(combos)
         # elif choice == "Find combo":
-        #     find_combo()
+        #     find_combo(combos)
         # elif choice == "Output all":
-        #     print_all()
+        #     print_all(combos)
 
         # display action screen with choices again
         choice = easygui.buttonbox("What would you like to do?",
@@ -40,4 +40,18 @@ def action_screen():
 
 
 # main program
-action_screen()
+combo_dict = {
+    "Value":
+        {"Beef Burger": "5.69",
+         "Fries": "1.00",
+         "Fizzy Drink": "1.00"},
+    "Cheezy":
+        {"Cheeseburger": "6.69",
+         "Fries": "1.00",
+         "Fizzy Drink": "1.00"},
+    "Super":
+        {"Cheeseburger": "6.69",
+         "Large fries": "2.00",
+         "Smoothie": "2.00"}
+}
+action_screen(combo_dict)
