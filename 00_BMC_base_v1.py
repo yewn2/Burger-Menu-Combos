@@ -1,5 +1,7 @@
 """
 Version 1 - Burger Menu Combo base component
+Compiled welcome_instructions, action_screen
+Added unwritten action functions
 """
 
 
