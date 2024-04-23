@@ -35,22 +35,25 @@ for combo_ID in combo_dict:
 if not combo_found:
     print("Combo not in menu.")
 
-# when combo is found, confirm deletion
-delete = input(f"You would like to delete the combo {del_ID}. "
-               f"Correct? (enter y/n) ")
+if combo_found:
+    # when combo is found, confirm deletion
+    delete = input(f"You would like to delete the combo {del_ID}. "
+                   f"Correct? (enter y/n) ")
 
-# confirmed, remove combo from dictionary and print it out
-for combo_ID, combo_info in combo_dict.items():
-    info_list = []
-    for key in combo_info:
-        info_list.append(f"{key} : ${combo_info[key]}\n")
-    if combo_ID == del_ID:
-        print(f"The combo you have deleted is:\n"
-              f"Combo ID: {del_ID}")
-        print("".join(info_list))
+    # confirmed, remove combo from dictionary and print it out
+    if delete == "y":
+        # print
+        for combo_ID, combo_info in combo_dict.items():
+            info_list = []
+            for key in combo_info:
+                info_list.append(f"{key} : ${combo_info[key]}\n")
+            if combo_ID == del_ID:
+                print(f"The combo you have deleted is:\n"
+                      f"Combo ID: {del_ID}")
+                print("".join(info_list))
 
-if delete == "y":
-    del combo_dict[del_ID]
+        # delete
+        del combo_dict[del_ID]
 
 
 print(combo_dict)
