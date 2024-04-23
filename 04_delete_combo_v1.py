@@ -54,6 +54,3 @@ if combo_found:
 
         # delete
         del combo_dict[del_ID]
-
-
-print(combo_dict)
