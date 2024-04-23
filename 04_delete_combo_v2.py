@@ -1,5 +1,5 @@
 """
-Delete combo version 1
+Delete combo version 2
 This version uses a list, for trialling
 Easygui not added
 Code not in a function yet
