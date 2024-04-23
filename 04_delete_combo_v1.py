@@ -29,7 +29,6 @@ del_ID = input("Enter the ID of the combo you want to delete: ")
 
 # check if the combo exists
 for combo_ID in combo_dict:
-    info_list = []
     if del_ID == combo_ID:
         combo_found = True
 
