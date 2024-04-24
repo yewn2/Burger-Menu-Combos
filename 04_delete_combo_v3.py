@@ -41,7 +41,28 @@ def delete_combo(menu):
                     combo_info = "\n".join(info_list)
                     easygui.msgbox(f"The combo you have deleted is:\n"
                                    f"{del_ID}\n"
-                                   f"{combo_info}")
+                                   f"{combo_info}", "Deleted combo")
 
             # delete
             del menu[del_ID]
+
+
+# setting up initial menu
+combo_dict = {
+    "Value":
+        {"Beef Burger": "5.69",
+         "Fries": "1.00",
+         "Fizzy Drink": "1.00"},
+    "Cheezy":
+        {"Cheeseburger": "6.69",
+         "Fries": "1.00",
+         "Fizzy Drink": "1.00"},
+    "Super":
+        {"Cheeseburger": "6.69",
+         "Large fries": "2.00",
+         "Smoothie": "2.00"}
+}
+
+delete_combo(combo_dict)
+
+print(combo_dict)
