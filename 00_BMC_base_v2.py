@@ -157,6 +157,19 @@ def delete_combo(menu):
     del_ID = easygui.enterbox("Enter the ID of the combo you want to delete:",
                               "Combo ID")
 
+    # ID confirmation
+    confirm_ID = easygui.buttonbox(f"The ID of the combo you want to "
+                                   f"delete is '{del_ID}'.",
+                                   "ID Confirmation",
+                                   ["Yes", "No"])
+    while confirm_ID != "Yes":
+        del_ID = easygui.enterbox(
+            "Enter the ID of the combo you want to delete:",
+            "Combo ID")
+        confirm_ID = easygui.buttonbox(f"The ID of the combo you want to "
+                                       f"delete is '{del_ID}'.",
+                                       "ID Confirmation",
+                                       ["Yes", "No"])
     # check if the combo exists
     for combo_ID in menu:
         if del_ID == combo_ID:
