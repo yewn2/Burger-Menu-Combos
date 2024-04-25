@@ -1,0 +1,60 @@
+"""
+Delete combo version 4
+Added the code to double-check the ID with the user, as I forgot to do
+this earlier.
+"""
+
+# imports
+import easygui
+
+
+def delete_combo(menu):
+    # check if combo in menu
+    combo_found = False
+
+    # asking user for ID of combo to delete
+    del_ID = easygui.enterbox("Enter the ID of the combo you want to delete:",
+                              "Combo ID")
+
+    # ID confirmation
+    confirm_ID = easygui.buttonbox(f"The ID of the combo you want to "
+                                   f"delete is '{del_ID}'.",
+                                   "ID Confirmation",
+                                   ["Yes", "No"])
+    while confirm_ID != "Yes":
+        del_ID = easygui.enterbox(
+            "Enter the ID of the combo you want to delete:",
+            "Combo ID")
+        confirm_ID = easygui.buttonbox(f"The ID of the combo you want to "
+                                       f"delete is '{del_ID}'.",
+                                       "ID Confirmation",
+                                       ["Yes", "No"])
+    # check if the combo exists
+    for combo_ID in menu:
+        if del_ID == combo_ID:
+            combo_found = True
+
+    if not combo_found:
+        easygui.msgbox("Combo not in menu.", "Combo not found")
+
+    if combo_found:
+        # when combo is found, confirm deletion
+        delete = easygui.buttonbox(f"You would like to delete "
+                                   f"the combo {del_ID}.",
+                                   "Confirm delete", ["Yes", "No"])
+
+        # confirmed, remove combo from dictionary and print it out
+        if delete == "Yes":
+            # print
+            for combo_ID, combo_inf in menu.items():
+                info_list = []
+                for key in combo_inf:
+                    info_list.append(f"{key} : ${combo_inf[key]}")
+                if combo_ID == del_ID:
+                    combo_info = "\n".join(info_list)
+                    easygui.msgbox(f"The combo you have deleted is:\n"
+                                   f"{del_ID}\n"
+                                   f"{combo_info}", "Deleted combo")
+
+            # delete
+            del menu[del_ID]
