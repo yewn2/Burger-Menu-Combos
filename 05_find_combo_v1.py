@@ -43,11 +43,11 @@ def find_combo(menu):
     # combo found?
     if combo_found:
         # print out combo
-        for find_ID, combo_inf in menu.items():
+        for combo_ID, combo_inf in menu.items():
             info_list = []
             for key in combo_inf:
                 info_list.append(f"{key} : ${combo_inf[key]}")
-            if find_ID == find_ID:
+            if find_ID == combo_ID:
                 combo_info = "\n".join(info_list)
                 easygui.msgbox(f"The combo you have found is:\n"
                                f"{find_ID}\n"
