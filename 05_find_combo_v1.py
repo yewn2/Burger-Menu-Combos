@@ -32,8 +32,8 @@ def find_combo(menu):
                                        "ID Confirmation",
                                        ["Yes", "No"])
     # check if the combo exists
-    for find_ID in menu:
-        if find_ID == find_ID:
+    for combo_ID in menu:
+        if find_ID == combo_ID:
             combo_found = True
 
     # combo not found?
